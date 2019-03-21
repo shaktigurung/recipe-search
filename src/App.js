@@ -3,14 +3,14 @@ import './App.css';
 import {recipes} from './tempList';
 import RecipeList from './components/RecipeList';
 import RecipeDetails from './components/RecipeDetails';
-import dotenv from "dotenv";
-dotenv.config()
+import dotenv from 'dotenv';
+dotenv.config();
 
 class App extends Component {
   state = {
     recipes: [recipes],
-    url: `${process.env.REACT_APP_BASE_URL}`,
-    base_url: `${process.env.REACT_APP_BASE_URL}`,
+    url:`${process.env.REACT_APP_BASE_URL}`,
+    base_url:`${process.env.REACT_APP_BASE_URL}`,
     details_id: 35389,
     pageIndex: 1,
     search: "",
@@ -20,7 +20,6 @@ class App extends Component {
 
   async getRecipes() {
     try {
-      console.log(this.state.url);
       const data = await fetch(this.state.url);
       const jsonData = await data.json();
       if (jsonData.recipes.length === 0) {
@@ -90,7 +89,6 @@ class App extends Component {
   }
 
   render() {
-    
     return (
       <React.Fragment>
         {this.displayPage(this.state.pageIndex)}
