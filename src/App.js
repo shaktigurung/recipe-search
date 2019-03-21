@@ -9,8 +9,8 @@ dotenv.config()
 class App extends Component {
   state = {
     recipes: [recipes],
-    url:`${process.env.REACT_APP_BASE_URL}`,
-    base_url:`${process.env.REACT_APP_BASE_URL}`,
+    url: `${process.env.REACT_APP_BASE_URL}`,
+    base_url: `${process.env.REACT_APP_BASE_URL}`,
     details_id: 35389,
     pageIndex: 1,
     search: "",
